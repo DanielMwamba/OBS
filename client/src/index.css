@@ -1,0 +1,49 @@
+body {
+  font-family: 'Poppins', 'Montserrat', sans-serif;
+  background-color: #f0f0f0;
+  padding: 20px;
+}
+.number-button {
+  background-color: #3765B0;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  font-size: 24px;
+  margin: 10px;
+  cursor: pointer;
+  outline: none;
+}
+.selected {
+  background-color: #ffcc00;
+}
+.number-display {
+  background-color: #3765B0;
+  border-radius: 15px;
+  padding: 20px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 100px;
+}
+.number-ball {
+  background-color: #3765B0;
+  color: white;
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 10px;
+  animation: bounce 0.6s;
+}
+@keyframes bounce {
+  0%, 100% {
+      transform: translateY(0);
+  }
+  50% {
+      transform: translateY(-20px);
+  }
+}
