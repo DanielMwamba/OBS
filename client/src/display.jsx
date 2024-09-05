@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import useWebSocket from "react-use-websocket";
 
-const WS_URL = "ws://localhost:8080"; // URL du serveur WebSocket
+const WS_URL = 'wss://lotto-r7aq.onrender.com'; // URL du serveur WebSocket
 
 const Display = () => {
   const [numbers, setNumbers] = useState([]);

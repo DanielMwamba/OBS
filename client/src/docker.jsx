@@ -3,7 +3,7 @@ import useWebSocket, { ReadyState } from 'react-use-websocket';
 import './App.css';
 
 // L'URL du serveur WebSocket
-const WS_URL = 'ws://localhost:8080';
+const WS_URL = 'wss://lotto-r7aq.onrender.com';
 
 const Docker = () => {
     // État pour les numéros sélectionnés
