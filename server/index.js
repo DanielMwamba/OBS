@@ -40,7 +40,7 @@ server.listen(PORT, () => {
     console.log(`Le serveur WebSocket fonctionne sur http://localhost:${PORT}`);
 });
 
-// Route pour gérer les requêtes côté client
-app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, '../client/dist/index.html'));
-});
+// // Route pour gérer les requêtes côté client
+// app.get('*', (req, res) => {
+//     res.sendFile(path.join(__dirname, '../client/dist/index.html'));
+// });
