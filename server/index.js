@@ -11,14 +11,30 @@ const wss = new WebSocket.Server({ server });
 // Configuration de CORS
 app.use(cors());
 
+let editorContent = null;
+
+const typesDef = {
+    CONTENT_CHANGE: 'numberSelected'
+  }
+
 // Servir les fichiers statiques (si nécessaire)
 app.use(express.static(path.join(__dirname, '../client/dist')));
+
+function handleMessage(message) {
+    const dataFromClient = JSON.parse(message.toString());
+    const json = { type: dataFromClient.type };
+    if (dataFromClient.type === typesDef.CONTENT_CHANGE) {
+      editorContent = dataFromClient.content;
+      json.data = { editorContent};
+    }
+    // broadcastMessage(json);
+  }
 
 wss.on('connection', (ws) => {
     console.log('Un utilisateur s\'est connecté.');
 
     // Réception des numéros sélectionnés par le client
-    ws.on('message', (message) => {
+    ws.on('message', (message) => { handleMessage(message)
         console.log(`Numéro reçu : ${message}`);
         
         // Envoyer ce numéro à tous les clients connectés
